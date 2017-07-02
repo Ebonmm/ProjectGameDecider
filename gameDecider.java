@@ -15,8 +15,8 @@ public class gameDecider
       //String username = "";
       //char password[];
       //String users[] = new String[5]; 
-      String users[] = {"ebonmm","pass1"}; 
-      String passwords[] = {"Spiral117", "A"};
+      String users[] = {"ebonmm","user1", "user2"}; 
+      String passwords[] = {"Spiral117", "pass1", "pass2"};
       String Games[] = new String[10];
       String choice;
 
