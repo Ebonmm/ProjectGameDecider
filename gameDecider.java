@@ -12,8 +12,8 @@ public class gameDecider
   {
       //Variables
 
-      String username = "";
-      char password[];
+      //String username = "";
+      //char password[];
       //String users[] = new String[5]; 
       String users[] = {"ebonmm","boobs","taco","tits","clits"}; 
       String passwords[] = {"Spiral117", "A", "B", "C", "D"};
@@ -28,8 +28,8 @@ public class gameDecider
       Scanner in = new Scanner(System.in);
       //calling intro and getting username and password
       intro();
-      username = getUser();
-      password = getPass();
+      String username = getUser();
+      char password[] = getPass();
 			//printlines(2);
 
       //System.out.println(password);
@@ -42,19 +42,19 @@ public class gameDecider
 				System.out.print("Sorry but username: " + username + " is not found would you like to create an account? (Y/N) \n");
 			} 
 			
-		/*	isPass = authPass(password, passwords, isUser);
+			isPass = authPass(password, passwords, isUser);
 			if (isPass == 0)
 			{
 				GIAS(2,0);
 				System.out.print("You are now logged in\n");
-			}*/
+			}
 
 
       //Menu
       menu();
       
       //getting user menu selection
-      GIAS(2,0); System.out.print("choice = ");
+      GIAS(2,1); System.out.print("choice = ");
       choice = in.nextLine();
       //System.out.println(choice);
       switch(choice)
@@ -113,8 +113,8 @@ public class gameDecider
 
       if (cnsl != null)
       {
-        char[] password = cnsl.readPassword("*password");
-        System.out.println("password is: " + password );
+        char[] password = cnsl.readPassword(" *password");
+        System.out.println("password is: " + password.toString() );
         return password;
       }
     
@@ -186,13 +186,7 @@ public class gameDecider
 
   }
 
-	public static void printlines(int a)
-	{
-		for (int i = 0; i < a; i++)
-		{
-			System.out.println();
-		}
-	}
+
 
   public static void menu()
   {
