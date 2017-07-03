@@ -19,6 +19,7 @@ public class gameDecider
       String passwords[] = {"Spiral117", "pass1", "pass2"};
       String Games[] = new String[10];
       String choice;
+      int exit =0;
 
 			//authentication variables
 			int isPass; // = 0 if authenticated = 1 if authentication failed and must get user again
@@ -30,9 +31,8 @@ public class gameDecider
       intro();
       String username = getUser();
       char password[] = getPass();
-			//printlines(2);
 
-      //System.out.println(password);
+
 
 			//authenticating user
 			isUser = authUser(username,users);
@@ -49,7 +49,8 @@ public class gameDecider
 				System.out.print("You are now logged in\n");
 			}
 
-
+      //need do while here
+      do{
       //Menu
       menu();
       
@@ -57,28 +58,42 @@ public class gameDecider
       GIAS(2,1); System.out.print("choice = ");
       choice = in.nextLine();
       //System.out.println(choice);
-      switch(choice)
-      {
-        case "Show":
-                GIAS(2,0);
-                System.out.println("entered show"); 
-                break;
-        case "Random": 
-                GIAS(2,0);
-                System.out.println("entered Random");
-                break;
-        case "Add":
-                GIAS(2,0); 
-                System.out.println("entered Add");
-                break;
-        case "Remove": 
-                GIAS(2,0);
-                System.out.println("entered Remove");
-                break;
+      switch(choice) {
+          case "Show":
+          case "show":{
+              GIAS(2, 0);
+              System.out.println("entered show");
+              break;
+          }
+          case "Random":
+          case "random": {
+              GIAS(2, 0);
+              System.out.println("entered Random");
+              break;
+          }
+          case "Add":
+          case "add": {
+              GIAS(2, 0);
+              System.out.println("entered Add");
+              break;
+          }
+          case "Remove":
+          case "remove": {
+              GIAS(2, 0);
+              System.out.println("entered Remove");
+              break;
+          }
+          case "Exit":
+          case "exit": {
+              GIAS(2,0);
+              System.out.println("Thank you");
+              exit = 1;
+              break;
+          }
         default:
               GIAS(2,0);
               System.out.println("Please select a valid menu option");
-      }
+      }}while(exit != 1);
 
 
     
@@ -200,6 +215,8 @@ public class gameDecider
     System.out.print(" @ Add game to list\n");
     GIAS(1,1);
     System.out.print(" @ Remove game from list\n");
+    GIAS(1,1);
+    System.out.println(" @ Exit");
   }
 
 	public static void GIAS(int a, int b)
