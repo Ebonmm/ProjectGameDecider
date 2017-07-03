@@ -62,7 +62,12 @@ public class gameDecider
           case "Show":
           case "show":{
               GIAS(2, 0);
-              System.out.println("entered show");
+              for (int i = 0; i < Games.length; i++ ) {
+                  GIAS(2,0);
+                  System.out.println(Games[i]);
+
+              }
+
               break;
           }
           case "Random":
@@ -74,7 +79,7 @@ public class gameDecider
           case "Add":
           case "add": {
               GIAS(2, 0);
-              System.out.println("entered Add");
+              addGames(Games);
               break;
           }
           case "Remove":
@@ -219,6 +224,13 @@ public class gameDecider
     System.out.println(" @ Exit");
   }
 
+    //Get Indent and Spaces
+    /*
+    a: how many basic lines with boarders
+    b: what type of indent into actual output
+        0: no indent
+        1: one tab indent
+     */
 	public static void GIAS(int a, int b)
 	{
 		for (int i = 0; i < a-1; i++)
@@ -242,6 +254,17 @@ public class gameDecider
 	}
 
   
-  
+    public static void addGames(String [] games)
+    {
+        Scanner in = new Scanner (System.in);
+        int i = 0;
+        GIAS(2,1);
+        System.out.print("Please enter a game or games enter done when done entering");
+        while (in.hasNextLine()) {
+
+            games[i] = in.nextLine();
+        }
+
+    }
 
 }
